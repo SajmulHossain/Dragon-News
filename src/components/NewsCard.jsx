@@ -3,10 +3,9 @@ import { CiBookmark, CiStar } from 'react-icons/ci';
 import { FaStar } from 'react-icons/fa';
 import { IoEye, IoShareSocialOutline } from 'react-icons/io5';
 import Rating from 'react-rating';
-import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 const NewsCard = ({news}) => {
-  console.log(news);
   return (
     <div className="border">
       <div className="flex justify-between items-center bg-gray-200 p-4">
@@ -35,7 +34,7 @@ const NewsCard = ({news}) => {
           <img src={news.image_url} alt="" />
         </div>
 
-        <p className="mt-12 text-gray-400">{news.details}</p>
+        <p className="mt-12 text-gray-400">{news.details.slice(0,250)}... <Link to={`/news/${news._id}`} className='text-primary'>Read More</Link></p>
 
         <div className="divider my-0"></div>
 

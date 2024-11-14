@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../mainComponents/Header';
 import LeftNav from '../components/LeftNav';
-import NewsLayout from '../components/NewsLayout';
 import RightNav from '../components/RightNav';
 import { Outlet } from 'react-router-dom';
 
 const Home = () => {
+
   return (
     <>
       <Header />
