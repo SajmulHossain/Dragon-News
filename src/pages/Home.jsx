@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../mainComponents/Header';
 import LeftNav from '../components/LeftNav';
 import RightNav from '../components/RightNav';
 import { Outlet } from 'react-router-dom';
+import { AuthContext } from '../contextProvider/AuthProvider';
+import Loader from '../components/Loader';
 
 const Home = () => {
 
+  const {loading} = useContext(AuthContext);
+
+  if(loading) {
+    return <Loader />;
+  }
   return (
     <>
       <Header />

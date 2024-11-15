@@ -1,14 +1,14 @@
-import React from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Home from '../pages/Home';
-import NewsLayout from '../components/NewsLayout';
-import AuthLayout from '../pages/AuthLayout';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
-import NewsDetails from '../components/NewsDetails';
-import PrivetRoute from './PrivetRoute';
-import NotCreated from '../components/NotCreated';
-import NotFound from '../components/NotFound';
+import React from "react";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import Home from "../pages/Home";
+import NewsLayout from "../components/NewsLayout";
+import AuthLayout from "../pages/AuthLayout";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import NewsDetails from "../components/NewsDetails";
+import PrivetRoute from "./PrivetRoute";
+import NotCreated from "../components/NotCreated";
+import NotFound from "../components/NotFound";
 
 const Router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <AuthLayout />,
+    element: <AuthLayout></AuthLayout>,
     children: [
       {
         path: "login",
@@ -45,26 +45,26 @@ const Router = createBrowserRouter([
   },
   {
     path: "/news/:id",
-    element: <PrivetRoute>
-      <NewsDetails />
-    </PrivetRoute>,
+    element: (
+      <PrivetRoute>
+        <NewsDetails />
+      </PrivetRoute>
+    ),
     loader: ({ params }) =>
-      fetch(
-        `https://openapi.programming-hero.com/api/news/${params.id}`
-      ),
+      fetch(`https://openapi.programming-hero.com/api/news/${params.id}`),
   },
   {
-    path: '/about',
-    element: <NotCreated />
+    path: "/about",
+    element: <NotCreated />,
   },
   {
-    path: '/career',
-    element: <NotCreated />
+    path: "/career",
+    element: <NotCreated />,
   },
   {
-    path: '*',
-    element:<NotFound />
-  }
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default Router;
