@@ -9,7 +9,7 @@ const PrivetRoute = ({children}) => {
   const {user, loading} = useContext(AuthContext);
 
   if(loading) {
-    return <Loader />
+    return <Loader />;
   }
 
   if(user && user?.email) {

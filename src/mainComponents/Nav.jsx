@@ -6,11 +6,12 @@ import { AuthContext } from '../contextProvider/AuthProvider';
 const Nav = () => {
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
- 
 
   return (
     <nav className="flex justify-between items-center">
-      <div></div>
+      <div>
+        <h3 className='font-semibold'>{user?.displayName && user.displayName}</h3>
+      </div>
       <div>
         <ul className="flex gap-4">
           <li>
@@ -31,7 +32,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="flex items-center gap-2">
-        <img src={userImg} className="h-8 w-8" alt="user" />
+        <img src={user?.photoURL ? user.photoURL : userImg} className="h-8 w-8 rounded-full" alt="user" />
         {user ? (
           <button
             onClick={() => {logOut(); navigate('/auth/login')}}
