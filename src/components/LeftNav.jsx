@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 
+
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
 
@@ -15,7 +16,7 @@ const LeftNav = () => {
       <h3 className="font-semibold">All Category</h3>
 
       <nav className="mt-5">
-        <ul className="space-y-2">
+        <ul className="md:space-y-2 flex px-3 md:px-0 gap-2 overflow-x-scroll md:block">
           {categories.map((category) => (
             <li key={category.category_id}>
               <NavLink

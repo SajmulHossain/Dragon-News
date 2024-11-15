@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className='w-11/12 mx-auto grid grid-cols-12 gap-3 py-8'>
+      <main className='w-11/12 mx-auto md:grid grid-cols-12 gap-3 py-8'>
         <aside className='col-span-3'>
           <LeftNav />
         </aside>

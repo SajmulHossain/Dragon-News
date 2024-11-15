@@ -7,6 +7,8 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import NewsDetails from '../components/NewsDetails';
 import PrivetRoute from './PrivetRoute';
+import NotCreated from '../components/NotCreated';
+import NotFound from '../components/NotFound';
 
 const Router = createBrowserRouter([
   {
@@ -51,6 +53,18 @@ const Router = createBrowserRouter([
         `https://openapi.programming-hero.com/api/news/${params.id}`
       ),
   },
+  {
+    path: '/about',
+    element: <NotCreated />
+  },
+  {
+    path: '/career',
+    element: <NotCreated />
+  },
+  {
+    path: '*',
+    element:<NotFound />
+  }
 ]);
 
 export default Router;
